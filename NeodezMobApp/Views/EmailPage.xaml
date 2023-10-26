@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NeodezMobApp.Views.EmailPage"
+             Title="Написать письмо "
+             BackgroundColor="White">
+    <StackLayout>
+        <StackLayout HorizontalOptions="Center" VerticalOptions="Center" Margin="20" Spacing="10">
+
+            <Label Margin="0,0,0,10" Text="Написать нам письмо" FontAttributes="Bold" FontSize="Large" TextColor="#CA6F1E" HorizontalTextAlignment="Center" ></Label>
+            <Border Style="{StaticResource BorderOrderStyle}">
+                <Entry x:Name="txtSubject" 
+                       WidthRequest="300"
+                       Margin="5"                       
+                       Placeholder="Тема"                        
+                       TextColor="{StaticResource Gray900}"/>
+            </Border>
+            <Border Style="{StaticResource BorderOrderStyle}">
+                <Editor x:Name="txtBody" 
+                        HeightRequest="150" 
+                        WidthRequest="300" 
+                        Placeholder="Текст письма" 
+                        TextColor="{StaticResource Gray900}"/>
+            </Border>
+            <Button x:Name="btnSend" Text="Отправить" Clicked="btnSend_Clicked" TextColor="White" />
+        </StackLayout>
+    </StackLayout>
+</ContentPage>

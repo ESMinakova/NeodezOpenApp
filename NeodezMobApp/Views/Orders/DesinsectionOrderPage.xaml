@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:contentViews="clr-namespace:NeodezMobApp.ContentViews"
+             x:Class="NeodezMobApp.Views.DesinsectionOrderPage"             
+             BackgroundColor="White">
+
+<Shell.TitleView>
+    <HorizontalStackLayout VerticalOptions="Fill">
+        <Label Style="{StaticResource Key=ShellTitleLabelStyle}"
+                Text="Дезинсекция - заказ услуги" 
+               FontSize="Subtitle"/>
+    </HorizontalStackLayout>
+</Shell.TitleView>
+
+<ScrollView>
+    <VerticalStackLayout Padding="10">
+        <Label Style="{StaticResource LabelOrderStyle}" 
+               Text="Кто Вас беспокоит?"      
+               FontSize="20"
+               HorizontalOptions="StartAndExpand" Padding="10"/>
+
+        <StackLayout Padding="8" Orientation="Vertical">
+            <StackLayout Padding="2" Orientation="Horizontal">
+                <CheckBox x:Name="cockroachCheckBox" Color="{StaticResource NeodezColor}" />
+                <Label FontSize="16"  Text="тараканы" TextColor="{StaticResource NeodezColor}" />
+            </StackLayout>
+            <StackLayout Padding="2" Orientation="Horizontal">
+                <CheckBox x:Name="bugsCheckBox" Color="{StaticResource NeodezColor}" />
+                <Label FontSize="16"  Text="клопы" TextColor="{StaticResource NeodezColor}" />
+            </StackLayout>
+            <StackLayout Padding="2" Orientation="Horizontal">
+                <CheckBox x:Name="antsCheckBox" Color="{StaticResource NeodezColor}"  />
+                <Label FontSize="16"  Text="муравьи" TextColor="{StaticResource NeodezColor}" />
+            </StackLayout>
+            <StackLayout Padding="2" Orientation="Horizontal">
+                <CheckBox x:Name="fleasCheckBox" Color="{StaticResource NeodezColor}" />
+                <Label FontSize="16"  Text="блохи" TextColor="{StaticResource NeodezColor}"/>
+            </StackLayout>
+            <StackLayout Padding="2" Orientation="Horizontal">
+                <contentViews:OrderCommonPartContentView x:Name="order" />
+            </StackLayout>
+            <StackLayout Margin="10">
+                <Button x:Name="orderButton" 
+                            Text="Заказать звонок" 
+                            Clicked="OrderButton_Clicked"  
+                            HeightRequest="50" 
+                            CornerRadius="10" 
+                            TextColor="White" />
+            </StackLayout>
+        </StackLayout>
+    </VerticalStackLayout>
+</ScrollView>
+</ContentPage>

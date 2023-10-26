@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NeodezMobApp.ContentViews.OrderSmallCommonPartContentView"
+             BackgroundColor="White">
+    
+    <VerticalStackLayout>
+
+        <StackLayout  Orientation="Vertical" Spacing="3">
+            <Label Style="{StaticResource LabelOrderStyle}"
+                   Text="Ваш контактный телефон" />
+            <Border Style="{StaticResource BorderOrderStyle}" >
+                <Entry Style="{StaticResource EntryOrderStyle}"
+                       x:Name="customerPhone"                    
+                       Keyboard="Telephone"                    
+                       Placeholder="+7**********" />
+            </Border>
+        </StackLayout>
+
+        <StackLayout  Orientation="Vertical" Spacing="3">
+            <Label Style="{StaticResource LabelOrderStyle} "  
+                   Text="Ваше имя" />
+            <Border Style="{StaticResource BorderOrderStyle}">
+                <Entry Style="{StaticResource EntryOrderStyle}"
+                       x:Name="customerName" />
+            </Border>
+        </StackLayout>
+
+        <StackLayout  Orientation="Vertical" Spacing="3">
+            <Label Style="{StaticResource LabelOrderStyle}"                
+                   Text="Примерная площадь" />
+            <Border Style="{StaticResource BorderOrderStyle}">
+                <Entry Style="{StaticResource EntryOrderStyle}" 
+                       x:Name="square" 
+                       Keyboard="Numeric"/>
+            </Border>
+        </StackLayout>
+
+        <StackLayout Orientation="Vertical" Spacing="3">
+            <Label Style="{StaticResource LabelOrderStyle}"
+                   Text="Выберете удобное для вас время" />
+            <Border Style="{StaticResource BorderOrderStyle}">
+
+                <Picker x:Name="dateTimePicker"
+                        
+                        BackgroundColor="White"  
+                        HorizontalOptions="FillAndExpand"
+                        Title="   В рабочее время" 
+                        TitleColor="{StaticResource Gray400}"
+                        TextColor="{StaticResource NeodezColor}"
+                        FontSize="16">
+
+                    <Picker.Items>
+
+                        <x:String>В рабочее время</x:String>
+                        <x:String>Вечером или в выходные</x:String>
+                    </Picker.Items>
+                </Picker>
+            </Border>
+        </StackLayout>
+        
+        <StackLayout Padding="2" Orientation="Horizontal">
+            <CheckBox x:Name="agreementCheckBox"
+                      Color="{StaticResource NeodezColor}"
+                      IsChecked="True"/>
+            <Label Style="{StaticResource LabelOrderStyle}"  
+                   Text="Я согласен(на) на обработку &#10; моих персональных данных" />
+        </StackLayout>
+
+        <StackLayout Padding="2" Orientation="Vertical" Spacing="3">
+            <Label Style="{StaticResource LabelOrderStyle}"  
+                   Text="Дополнительная информация:"
+                   MaxLines="2"/>
+            <Border Style="{StaticResource BorderOrderStyle}"
+                    HeightRequest="80">
+                <Editor x:Name="comments"  
+                        Placeholder="  Комментарии к заказу"
+                        FontSize="16"
+                        PlaceholderColor="{StaticResource Gray300}"                                         
+                        VerticalOptions="FillAndExpand"
+                        BackgroundColor="White" 
+                        TextColor="Black"/>
+            </Border>
+        </StackLayout>
+        
+    </VerticalStackLayout>
+</ContentView>

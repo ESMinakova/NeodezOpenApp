@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodels="clr-namespace:NeodezMobApp.ViewModels"
+             x:Class="NeodezMobApp.Views.AllProductsPage"
+             BackgroundColor = "White">
+    <Shell.TitleView>
+        <HorizontalStackLayout VerticalOptions="Fill">
+            <Label Style="{StaticResource Key=ShellTitleLabelStyle}"
+                Text="Наши услуги" />
+        </HorizontalStackLayout>
+    </Shell.TitleView>
+    <CollectionView x:Name="productList"
+                        ItemsSource="{Binding Products}"
+                        Margin="20"
+                        SelectionMode="Single"                    
+                        SelectionChanged="productList_SelectionChanged">
+
+        <!-- Designate how the collection of items are laid out -->
+        <CollectionView.ItemsLayout>
+            <GridItemsLayout Orientation="Vertical"
+                        Span="2" />
+        </CollectionView.ItemsLayout>
+        <CollectionView.ItemTemplate>
+            <DataTemplate>
+                <Grid Padding="5" >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="150" />
+
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />                      
+                    </Grid.ColumnDefinitions>                    
+                        <Border Stroke="#3837AA"
+                           
+                           Padding="5"
+                           Margin="5"
+                           BackgroundColor="White"
+                           StrokeShape="RoundRectangle 5,5,5,5">
+                            <Border.Shadow>
+                                <Shadow Brush="{StaticResource NeodezColor}"
+                                    Offset="10,10"                                
+                                    Opacity="0.9"
+                                        Radius="20"/>
+                            </Border.Shadow>
+                            <StackLayout Spacing="5"
+                                         Margin="5">
+                                <StackLayout.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="OnTapped" BindingContext="{Binding}"/>
+                                </StackLayout.GestureRecognizers>
+                                <Image Source="{Binding IconImagePath}"
+                            Aspect="AspectFill"
+                            HeightRequest="60"
+                            WidthRequest="60" 
+                            Margin="3"/>
+                                <Label Grid.Column="1"
+                            MaxLines="2"
+                            HorizontalTextAlignment="Center"
+                            Text="{Binding Name}"
+                            FontAttributes="Bold"
+                            LineBreakMode="WordWrap"
+                            TextColor ="#3837AA" />
+
+                            </StackLayout>
+                        </Border>                    
+                </Grid>
+            </DataTemplate>
+        </CollectionView.ItemTemplate>
+    </CollectionView>
+</ContentPage>

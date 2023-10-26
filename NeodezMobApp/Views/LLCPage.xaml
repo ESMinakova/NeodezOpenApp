@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NeodezMobApp.Views.LLCPage"
+             xmlns:contentViews="clr-namespace:NeodezMobApp.ContentViews"             
+             BackgroundColor="White">
+    <Shell.TitleView>
+        <HorizontalStackLayout VerticalOptions="Fill">
+            <Label Style="{StaticResource Key=ShellTitleLabelStyle}"
+                Text="Для юридических лиц" />
+        </HorizontalStackLayout>
+    </Shell.TitleView>
+
+
+    <VerticalStackLayout Spacing="10"
+                         Margin="15">
+        <Label Style="{StaticResource LabelOrderStyle}"
+            Text="Компания &quot;НЕОДЕЗ&quot; работает с юридическими лицами, оказывая им полный спектр услуг по борьбе с насекомыми, микроорганизмами и грязью на промышленных объектах. Мы давно сотрудничаем с производственными и торговыми компаниями - от автосалонов до хлебозаводов - и знаем их специфику. Стандарты качества, регулярный аудит, система HACCP - наши основные ориентиры в работе. Если Вы заинтересованы в обретении постоянного и надежного партнера для поддержания высоких стандартов чистоты и санитарии в Вашей организации, пожалуйста, напишите нам письмо."
+            VerticalOptions="Center" 
+            HorizontalOptions="Fill" 
+            FontSize="Small"/>
+        <contentViews:ConnectionButtonsContentView />
+    </VerticalStackLayout>
+</ContentPage>

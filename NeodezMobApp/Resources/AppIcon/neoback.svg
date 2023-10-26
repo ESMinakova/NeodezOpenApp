@@ -1,0 +1,7 @@
+<svg version="1.2" baseProfile="tiny-ps" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+	<title>Новый проект</title>
+	<style>
+		tspan { white-space:pre }
+	</style>
+	<rect width="400" height="400" id="Заливка сплошным цветом 1" style="fill: #4342b9" />
+</svg>

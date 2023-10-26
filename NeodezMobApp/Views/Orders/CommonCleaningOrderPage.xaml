@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NeodezMobApp.Views.CommonCleaningOrderPage"
+             xmlns:contentViews="clr-namespace:NeodezMobApp.ContentViews"             
+             BackgroundColor="White">
+    
+    <Shell.TitleView>
+        <HorizontalStackLayout VerticalOptions="Fill">
+            <Label Style="{StaticResource Key=ShellTitleLabelStyle}"
+                Text="Уборка квартир - заказ услуги" 
+                   FontSize="Subtitle"/>
+        </HorizontalStackLayout>
+    </Shell.TitleView>
+    <ScrollView>
+        <VerticalStackLayout Spacing="10">
+
+
+            <StackLayout Padding="3" Orientation="Vertical" Spacing="3">
+                <StackLayout Orientation="Vertical" Spacing="3">                    
+                    <Label Style="{StaticResource LabelOrderStyle}"
+                           Text="Что надо убрать?" />
+                    <Border Style="{StaticResource BorderOrderStyle}"
+                            HorizontalOptions="StartAndExpand"
+                            Margin="12,0,0,0">
+                        <Entry x:Name="cleaningSubjectEntry"  
+                               Style="{StaticResource EntryOrderStyle}"
+                               Placeholder="квартира, офис и т.п"
+                               PlaceholderColor="{StaticResource Gray400}"/>
+                    </Border>
+                </StackLayout>
+
+                <StackLayout Padding="2" Orientation="Horizontal" Spacing="5">
+                    <contentViews:OrderCommonPartContentView x:Name="order" />
+                </StackLayout>
+                <StackLayout Margin="10">
+                    <Button x:Name="orderButton" 
+                            Text="Заказать звонок" 
+                            Clicked="OrderButton_Clicked"  
+                            HeightRequest="50" 
+                            CornerRadius="10" 
+                            TextColor="White" />
+                </StackLayout>
+            </StackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

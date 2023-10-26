@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodels="clr-namespace:NeodezMobApp.ViewModels"
+             x:Class="NeodezMobApp.Views.ProductPage"
+             BackgroundColor="White">
+    <Shell.TitleView>
+        <HorizontalStackLayout VerticalOptions="Fill">
+            <Label Style="{StaticResource Key=ShellTitleLabelStyle}"
+                Text="{Binding Name}" />
+        </HorizontalStackLayout>
+    </Shell.TitleView>
+    <ScrollView>
+    <StackLayout>
+        <Grid VerticalOptions="FillAndExpand">
+            <Image Aspect="AspectFill" 
+                   Source="{Binding ProductImagePath}" 
+                   VerticalOptions="StartAndExpand" />
+            <AbsoluteLayout>
+                <Grid VerticalOptions="EndAndExpand" 
+                      AbsoluteLayout.LayoutBounds="0, 300, 1, Autosize"                       
+                      AbsoluteLayout.LayoutFlags="WidthProportional">   
+                    
+                    <Frame BorderColor="White">
+                        <StackLayout x:Name="aboutProduct" 
+                                     Padding="10" 
+                                     Spacing="15" 
+                                     VerticalOptions="End">                   
+
+                            <Label Text="{Binding Name}" FontSize="Large" TextColor="{StaticResource NeodezColor}" HorizontalOptions="CenterAndExpand"/>
+                            <Label Text="{Binding Description}" FontSize="17" TextColor="Grey" />
+                            <Button Style="{StaticResource defaultButton}"
+                                    Text="Заказать" 
+                                    Clicked="OnOrderButtonClicked" 
+                                    BindingContext="{Binding Category}"
+                                    VerticalOptions="End"/>                   
+
+                        </StackLayout>
+                    </Frame>          
+                </Grid>
+            </AbsoluteLayout>            
+        </Grid>
+    </StackLayout>
+    </ScrollView>
+</ContentPage>
