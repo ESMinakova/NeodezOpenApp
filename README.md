@@ -7,4 +7,8 @@
 - Возможность связаться с компанией через мессенджеры, e-mail.
 
 ## Использованные языки и технологии: 
-C#, .NET MAUI, Xamarin, XAML.
+- C#
+- .NET MAUI (MVVM)
+- Xamarin
+- XAML
+- Dependency Injection
