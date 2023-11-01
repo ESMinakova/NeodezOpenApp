@@ -9,6 +9,7 @@
 ## Использованные языки и технологии: 
 - C#
 - .NET MAUI (MVVM)
+- ООП
 - Xamarin
 - XAML
 - Dependency Injection
