@@ -8,5 +8,12 @@ namespace NeodezMobApp.Models
 {
     internal class Product
     {
+        public Guid Id { get; set; }
+
+        public string Name { get; set; }
+
+        public string ProductImagePath { get; set; }
+
+        public string Description { get; set; }
     }
 }
