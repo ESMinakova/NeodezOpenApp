@@ -63,7 +63,6 @@ namespace NeodezMobApp.ViewModels
                     ProductImagePath = "deratisation_main.jpg",
                     Description = "Избавим от любых грызунов, поможем избежать рецидивов, защитить здоровье и имущество.\n"   +
                     "Стоимость услуги от 2000 руб."
-
                 },
 
                 new ProductViewModel()
